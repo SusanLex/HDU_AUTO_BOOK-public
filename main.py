@@ -155,7 +155,7 @@ class SeatAutoBooker:
 
 
 if __name__ == "__main__":
-    if datetime.now().hour == 19 - time_zone :  
+    if datetime.now().hour == 19 - time_zone or datetime.now().hour == 23 - time_zone :  
         # hold on
         slep=60-datetime.now().minute
         nap=datetime.now().second
