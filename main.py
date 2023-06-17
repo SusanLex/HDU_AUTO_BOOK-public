@@ -161,7 +161,7 @@ if __name__ == "__main__":
         nap=datetime.now().second
         print("图书馆预约时间未到，我将等待约{}分钟后运行，现在的时间是：".format(slep))
         print (time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
-        time.sleep(60*slep-nap-6)
+        time.sleep(60*slep-nap-30)
         print("我醒了，即将开始预约，现在的时间是：")
         print (time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
     else:                                                                    
@@ -203,10 +203,11 @@ if __name__ == "__main__":
     stat, msg = s.book_favorite_seat(cfg[key]['开始时间'], cfg[key]['持续小时数'])
     print (time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
     if stat != "ok":
-        time.sleep(4)
+        nap=datetime.now().second
+        time.sleep(59-nap)
         for i in range(3):
             print("尝试重新预约")
-            time.sleep(2)
+            time.sleep(1)
             print (time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
             stat, msg = s.book_favorite_seat(cfg[key]['开始时间'], cfg[key]['持续小时数'])
             print(stat, msg)
