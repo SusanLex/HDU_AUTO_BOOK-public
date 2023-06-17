@@ -207,11 +207,11 @@ if __name__ == "__main__":
         time.sleep(59-nap)
         for i in range(3):
             print("尝试重新预约")
-            time.sleep(1)
             print (time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
             stat, msg = s.book_favorite_seat(cfg[key]['开始时间'], cfg[key]['持续小时数'])
             print(stat, msg)
             print (time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
+            time.sleep(1)
             if stat == "ok":
                 print("{}".format("Talk Dirty to Me！" if stat == "ok" else "Sorry！"))
                 break
