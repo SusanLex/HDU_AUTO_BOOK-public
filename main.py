@@ -204,7 +204,7 @@ if __name__ == "__main__":
     print (time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
     if stat != "ok":
         nap=datetime.now().second
-        time.sleep(59-nap)
+        time.sleep(60-nap)
         for i in range(3):
             print("尝试重新预约")
             print (time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
